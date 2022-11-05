@@ -1,5 +1,6 @@
-import '../styles/globals.css'
 import React from 'react';
+import '../styles/globals.css'
+import Navbar from '../components/ui/navbar';
 
 export default function RootLayout({ children }: {
   children: React.ReactNode;
@@ -9,7 +10,12 @@ export default function RootLayout({ children }: {
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body>{children}</body>
+      <body>
+        <header>
+          <Navbar />
+        </header>
+        {children}
+      </body>
     </html>
   );
 }
