@@ -1,9 +1,30 @@
 import '../styles/globals.css'
 import Navbar from '../components/ui/navbar';
+import { routeObj } from '../components/ui/navbar';
 
 export default function RootLayout({ children }: {
   children: React.ReactNode;
 }) {
+
+  const navbarList: Array<routeObj> = [
+    {
+      name: 'Home',
+      link: '/'
+    },
+    {
+      name: 'About',
+      link: '/about',
+    },
+    {
+      name: 'News',
+      link: '/news',
+    },
+    {
+      name: 'Contact',
+      link: '/contact',
+    },
+  ];
+
   return (
     <html lang="ja">
       <head>
@@ -13,11 +34,11 @@ export default function RootLayout({ children }: {
       </head>
       <body>
         <header>
-          <Navbar />
+          <Navbar list={navbarList} />
         </header>
         {children}
         <footer className="flex h-24 w-full items-center justify-center border-t">
-          ©  奥本看板 All rIghts reserved.
+          © オクモト看板 All rIghts reserved.
         </footer>
       </body>
     </html>
